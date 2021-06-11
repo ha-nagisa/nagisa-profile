@@ -7,7 +7,11 @@ const Header = ({ menuOpen, setMenuOpen }) => {
         <div className="flex justify-between items-center py-4 px-6">
           <div>
             <h1 className="font-bold text-white text-3xl">
-              NAGISA<span className="text-yellow-500">-PROFILE</span>
+              <Link href="/">
+                <a>
+                  NAGISA<span className="text-yellow-500">-PROFILE</span>
+                </a>
+              </Link>
             </h1>
           </div>
           <div className="flex items-center">
