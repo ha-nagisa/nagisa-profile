@@ -1,6 +1,6 @@
 const TopBanar = () => {
   return (
-    <section className="h-screen px-12 sm:px-24 flex items-center relative">
+    <section className="h-screen px-8 sm:px-24 flex items-center relative">
       <div className="grid grid-cols-12 gap-6 ">
         <div className="col-span-12 sm:col-span-12 md:col-span-12 lg:col-span-8 xxl:col-span-12">
           <div className="w-full">
