@@ -6,6 +6,7 @@ config.autoAddCss = false;
 library.add(faList, faBorderAll, faSortNumericDown, faSortNumericUp, faArrowUp);
 
 import "@fortawesome/fontawesome-svg-core/styles.css";
+import "highlight.js/styles/hybrid.css";
 
 function MyApp({ Component, pageProps }) {
   return <Component {...pageProps} />;
