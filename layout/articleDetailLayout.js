@@ -4,7 +4,7 @@ const ArticleDetailLayout = ({ children }) => {
   return (
     <MainLayout>
       <div>
-        <div className="bannerFondo bg-green-800 bg-left-top bg-auto bg-repeat-x h-64 sm:h-96"></div>
+        <div className="bannerFondo bg-green-800 bg-left-top bg-auto bg-repeat-x h-56  sm:h-96"></div>
         {children}
       </div>
     </MainLayout>

@@ -1,3 +1,4 @@
+import { urlFor } from "lib/api";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -10,9 +11,9 @@ const CardItem = ({ title, summary, date, image, slug }) => {
         <a className="transform block cursor-pointer h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden shadow-md hover:scale-105 hover:shadow-2xl duration-300">
           <Image
             className="lg:h-48 md:h-36 w-full object-cover object-center"
-            height="360px"
-            width="720px"
-            src={image}
+            height={360}
+            width={720}
+            src={urlFor(image).height(360).crop("center").fit("clip").url()}
             alt="blog"
           />
           <div className="p-6">
