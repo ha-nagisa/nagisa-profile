@@ -1,18 +1,19 @@
+import ArticleContent from "components/ArticleContent";
 import ArticleDetailLayout from "layout/articleDetailLayout";
-import { getAllBlogs, getBlogBySlug } from "lib/api";
+import { getAllBlogs, getBlogBySlug, urlFor } from "lib/api";
 import Image from "next/image";
 
 const BlogDetail = ({ blog }) => {
   return (
     <ArticleDetailLayout>
       <div className="-mt-40 sm:-mt-72">
-        <div className="container mx-auto w-11/12 text-center sm:my-0 md:p-5 xl:max-w-5xl">
+        <div className="container mx-auto w-11/12 text-center md:p-5 xl:max-w-5xl mt-8 sm:-mt-8">
           <div className="-mr-2 text-center sm:mr-0 md:p-10">
             <Image
               width={820}
               height={400}
               className="inline-block w-full max-w-5xl max-h-96 rounded-md object-cover object-center"
-              src={blog.coverImage}
+              src={urlFor(blog.coverImage).height(600).url()}
               alt="blog"
             />
           </div>
@@ -46,14 +47,7 @@ const BlogDetail = ({ blog }) => {
             </dl>
           </div>
           <div className="container mx-auto pb-24 md:px-20 xl:max-w-5xl">
-            <div>
-              <p>テストです</p>
-              <p>テストですテストですテストですテストですテストですテストです</p>
-              <p>テストですテストですテストですテストですテストですテストです</p>
-              <p>
-                テストですテストですテストですテストですテストですテストですテストですテストですテストですテストですテストですテストですテストですテストですテストですテストですテストですテストですテストですテストですテストですテストですテストですテストですテストですテストですテストですテストですテストですテストですテストですテストですテストですテストですテストです
-              </p>
-            </div>
+            {blog.content && <ArticleContent content={blog.content} />}
           </div>
         </section>
       </div>
