@@ -32,8 +32,13 @@ const FilteringMenu = ({ onChange, filter }) => {
           />
         </li>
       </ul>
-      <div className="cursor-pointer inline-block border-2 border-white p-2 ">
-        <FontAwesomeIcon icon="sort-numeric-up" size="lg" className="text-white" />
+      <div className="cursor-pointer inline-block border-2 border-white p-2 hover:bg-yellow-500">
+        <FontAwesomeIcon
+          icon={DATE_FILTERING_ICONS[filter?.date.asc]}
+          size="lg"
+          className="text-white"
+          onClick={() => onChange("date", { asc: +!filter.date.asc })}
+        />
       </div>
     </div>
   );
