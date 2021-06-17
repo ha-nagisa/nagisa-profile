@@ -1,11 +1,24 @@
 import Image from "next/image";
 import dayjs from "dayjs";
+import { useRouter } from "next/router";
 
 import ArticleContent from "components/ArticleContent";
 import ArticleDetailLayout from "layout/articleDetailLayout";
 import { getAllBlogs, getBlogBySlug, urlFor } from "lib/api";
 
 const BlogDetail = ({ blog }) => {
+  const router = useRouter();
+
+  if (router.isFallback) {
+    return (
+      <div class="fixed top-0 left-0 right-0 bottom-0 w-full h-screen z-50 overflow-hidden bg-green-800 opacity-75 flex flex-col items-center justify-center">
+        <div class="loader ease-linear rounded-full border-4 border-t-4 border-gray-200 h-12 w-12 mb-4"></div>
+        <h2 class="text-center text-white text-xl font-semibold">読み込んでいます。</h2>
+        <p class="w-1/3 text-center text-white">少々お待ちください！</p>
+      </div>
+    );
+  }
+
   return (
     <ArticleDetailLayout>
       <div className="-mt-40 sm:-mt-72">
