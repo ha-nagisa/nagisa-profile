@@ -1,7 +1,9 @@
-import { urlFor } from "lib/api";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import dayjs from "dayjs";
+
+import { urlFor } from "lib/api";
 
 const CardItem = ({ title, summary, date, image, slug }) => {
   const router = useRouter();
@@ -20,7 +22,7 @@ const CardItem = ({ title, summary, date, image, slug }) => {
             <h1 className="title-font text-lg font-medium text-gray-900 mb-3">{title}</h1>
             <p className="leading-relaxed mb-3">{summary}</p>
             <div className="text-right">
-              <a className="inline-block md:mb-2 lg:mb-0">{date}</a>
+              <a className="inline-block md:mb-2 lg:mb-0">{dayjs(date).format("YYYY/MM/DD")}</a>
             </div>
           </div>
         </a>

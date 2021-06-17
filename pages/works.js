@@ -1,6 +1,8 @@
 import { useGetWorksPages } from "actions/pagination";
 import CardItem from "components/cardItem";
+import CardItemBlank from "components/CardItemBlank";
 import CardListItem from "components/cardListItem";
+import CardItemListBlank from "components/CardListItemBlank";
 import LowerPageLayout from "layout/lowerPageLayout";
 import { getPaginatedWorks } from "lib/api";
 import { useState } from "react";
@@ -60,6 +62,11 @@ const Works = ({ works }) => {
         <div className="container px-5 pb-24 mx-auto">
           <div className="flex flex-wrap -m-4">
             <WorkList data={data || [works]} filter={filter} />
+            {isLoadingMore
+              ? Array(3)
+                  .fill(0)
+                  .map((_, i) => (filter.view.list ? <CardItemListBlank /> : <CardItemBlank />))
+              : null}
           </div>
           <div className="block text-center mt-12">
             <button

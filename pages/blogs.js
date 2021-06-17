@@ -1,9 +1,12 @@
+import { useState } from "react";
+
 import { useGetBlogsPages } from "actions/pagination";
 import CardItem from "components/cardItem";
+import CardItemBlank from "components/CardItemBlank";
 import CardListItem from "components/cardListItem";
+import CardItemListBlank from "components/CardListItemBlank";
 import LowerPageLayout from "layout/lowerPageLayout";
-import { getAllBlogs, getPaginatedBlogs } from "lib/api";
-import { useState } from "react";
+import { getPaginatedBlogs } from "lib/api";
 
 export const BlogList = ({ data = [], filter }) => {
   return data.map((page) =>
@@ -60,6 +63,11 @@ const Blogs = ({ blogs }) => {
         <div className="container px-5 pb-24 mx-auto">
           <div className="flex flex-wrap -m-4">
             <BlogList data={data || [blogs]} filter={filter} />
+            {isLoadingMore
+              ? Array(3)
+                  .fill(0)
+                  .map((_, i) => (filter.view.list ? <CardItemListBlank /> : <CardItemBlank />))
+              : null}
           </div>
           <div className="block text-center mt-12">
             <button
