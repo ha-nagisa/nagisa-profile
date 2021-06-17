@@ -1,7 +1,9 @@
+import Image from "next/image";
+import dayjs from "dayjs";
+
 import ArticleContent from "components/ArticleContent";
 import ArticleDetailLayout from "layout/articleDetailLayout";
 import { getAllBlogs, getBlogBySlug, urlFor } from "lib/api";
-import Image from "next/image";
 
 const BlogDetail = ({ blog }) => {
   return (
@@ -25,7 +27,7 @@ const BlogDetail = ({ blog }) => {
             </div>
             <div className="block">
               <p className="text-md inline-block px-3 py-2 text-gray-800 font-medium bg-white border-2 border-t-0 border-gray-800 rounded-b-md sm:text-xl md:text-3xl">
-                {blog.date}
+                {dayjs(blog.date).format("YYYY/MM/DD")}
               </p>
             </div>
           </div>
