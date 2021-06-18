@@ -1,9 +1,26 @@
+import Image from "next/image";
+import dayjs from "dayjs";
+import { useRouter } from "next/router";
+
 import ArticleContent from "components/ArticleContent";
 import ArticleDetailLayout from "layout/articleDetailLayout";
 import { getAllBlogs, getBlogBySlug, urlFor } from "lib/api";
-import Image from "next/image";
+import PreviewAlert from "components/PreviewAlert";
+import Link from "next/link";
 
-const BlogDetail = ({ blog }) => {
+const BlogDetail = ({ blog, preview }) => {
+  const router = useRouter();
+
+  if (router.isFallback) {
+    return (
+      <div className="fixed top-0 left-0 right-0 bottom-0 w-full h-screen z-50 overflow-hidden bg-green-800 opacity-75 flex flex-col items-center justify-center">
+        <div className="loader ease-linear rounded-full border-4 border-t-4 border-gray-200 h-12 w-12 mb-4"></div>
+        <h2 className="text-center text-white text-xl font-semibold">読み込んでいます。</h2>
+        <p className="w-1/3 text-center text-white">少々お待ちください！</p>
+      </div>
+    );
+  }
+
   return (
     <ArticleDetailLayout>
       <div className="-mt-40 sm:-mt-72">
@@ -25,28 +42,33 @@ const BlogDetail = ({ blog }) => {
             </div>
             <div className="block">
               <p className="text-md inline-block px-3 py-2 text-gray-800 font-medium bg-white border-2 border-t-0 border-gray-800 rounded-b-md sm:text-xl md:text-3xl">
-                {blog.date}
+                {dayjs(blog.date).format("YYYY/MM/DD")}
               </p>
             </div>
           </div>
         </div>
 
-        <section className="body-font mt-5 p-5 text-gray-600">
+        <section className="body-font  p-5 text-gray-600">
           <div className="container mx-auto md:px-20 xl:max-w-5xl">
-            <dl className="flex items-center border-b-2 border-gray-800 pb-2 mb-5 justify-end">
-              <dd className="mr-2">{blog.author.name}</dd>
-              <dt className="">
-                <Image
-                  width={40}
-                  height={40}
-                  className="rounded-full object-cover object-center"
-                  src={blog.author.avatar}
-                  alt="blog"
-                />
-              </dt>
-            </dl>
+            <div className="text-right border-b-2 border-gray-800 pb-2 mb-5 ">
+              <Link href="/about">
+                <a className="inline-block">
+                  <div className="mr-2 inline-block align-middle">{blog.author.name}</div>
+                  <div className="inline-block align-middle">
+                    <Image
+                      width={40}
+                      height={40}
+                      className="rounded-full object-cover object-center"
+                      src={blog.author.avatar}
+                      alt="blog"
+                    />
+                  </div>
+                </a>
+              </Link>
+            </div>
           </div>
           <div className="container mx-auto pb-24 md:px-20 xl:max-w-5xl">
+            {preview ? <PreviewAlert /> : null}
             {blog.content && <ArticleContent content={blog.content} />}
           </div>
         </section>
@@ -55,10 +77,11 @@ const BlogDetail = ({ blog }) => {
   );
 };
 
-export async function getStaticProps({ params }) {
-  const blog = await getBlogBySlug(params.slug);
+export async function getStaticProps({ params, preview = false, previewData }) {
+  const blog = await getBlogBySlug(params.slug, preview);
   return {
-    props: { blog },
+    props: { blog, preview },
+    revalidate: 1,
   };
 }
 
