@@ -5,8 +5,10 @@ import { useRouter } from "next/router";
 import ArticleContent from "components/ArticleContent";
 import ArticleDetailLayout from "layout/articleDetailLayout";
 import { getAllBlogs, getBlogBySlug, urlFor } from "lib/api";
+import PreviewAlert from "components/PreviewAlert";
+import Link from "next/link";
 
-const BlogDetail = ({ blog }) => {
+const BlogDetail = ({ blog, preview }) => {
   const router = useRouter();
 
   if (router.isFallback) {
@@ -46,22 +48,27 @@ const BlogDetail = ({ blog }) => {
           </div>
         </div>
 
-        <section className="body-font mt-5 p-5 text-gray-600">
+        <section className="body-font  p-5 text-gray-600">
           <div className="container mx-auto md:px-20 xl:max-w-5xl">
-            <dl className="flex items-center border-b-2 border-gray-800 pb-2 mb-5 justify-end">
-              <dd className="mr-2">{blog.author.name}</dd>
-              <dt className="">
-                <Image
-                  width={40}
-                  height={40}
-                  className="rounded-full object-cover object-center"
-                  src={blog.author.avatar}
-                  alt="blog"
-                />
-              </dt>
-            </dl>
+            <div className="text-right border-b-2 border-gray-800 pb-2 mb-5 ">
+              <Link href="/about">
+                <a className="inline-block">
+                  <div className="mr-2 inline-block align-middle">{blog.author.name}</div>
+                  <div className="inline-block align-middle">
+                    <Image
+                      width={40}
+                      height={40}
+                      className="rounded-full object-cover object-center"
+                      src={blog.author.avatar}
+                      alt="blog"
+                    />
+                  </div>
+                </a>
+              </Link>
+            </div>
           </div>
           <div className="container mx-auto pb-24 md:px-20 xl:max-w-5xl">
+            {preview ? <PreviewAlert /> : null}
             {blog.content && <ArticleContent content={blog.content} />}
           </div>
         </section>
@@ -70,10 +77,11 @@ const BlogDetail = ({ blog }) => {
   );
 };
 
-export async function getStaticProps({ params }) {
-  const blog = await getBlogBySlug(params.slug);
+export async function getStaticProps({ params, preview = false, previewData }) {
+  const blog = await getBlogBySlug(params.slug, preview);
   return {
-    props: { blog },
+    props: { blog, preview },
+    revalidate: 1,
   };
 }
 
