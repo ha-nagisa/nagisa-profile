@@ -9,9 +9,7 @@ const TopBanar = () => {
               <br />
               NAGISA<span className="text-yellow-500">-PROFILE</span>
             </h1>
-            <p className="text-xl text-white font-semibold ">
-              自分のことを知ってもらうためにこのサイトを作成しました！
-            </p>
+            <p className="text-xl text-white font-semibold ">自分のアウトプットのためこのサイトを作成しました。</p>
           </div>
         </div>
       </div>

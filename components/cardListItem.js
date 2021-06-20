@@ -23,9 +23,11 @@ const CardListItem = ({ title, summary, date, image, slug }) => {
             <div className="flex flex-col w-full text-gray-500 lg:ml-4 p-5">
               <p className="mt-4 mb-3 text-xs font-semibold tracking-widest text-black uppercase lg:mt-0 title-font">
                 {" "}
-                {title}
+                {title.length > 40 ? title.substr(0, 40) + "..." : title}
               </p>
-              <p className="mb-3 text-base leading-relaxed text-gray-500">{summary} </p>
+              <p className="mb-3 text-base leading-relaxed text-gray-500">
+                {summary.length > 120 ? summary.substr(0, 120) + "..." : summary}{" "}
+              </p>
               <p className="text-right">{dayjs(date).format("YYYY/MM/DD")}</p>
             </div>
           </div>
