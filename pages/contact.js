@@ -18,7 +18,7 @@ const Contact = () => {
             "Hayami Nagisaのお問い合わせページになります。質問等ありましたらフォームから入力をお願いいたします。",
           images: [
             {
-              url: "public/ogp.png",
+              url: "https://nagisa-profile.com/ogp.png",
               alt: "nagisa-profile",
             },
           ],

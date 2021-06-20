@@ -18,7 +18,7 @@ const About = () => {
             "Hayami Nagisaの自己紹介ページになります。質問等ありましたらフォームからお問い合わせいただけると幸いです。",
           images: [
             {
-              url: "public/ogp.png",
+              url: "https://nagisa-profile.com/ogp.png",
               alt: "nagisa-profile",
             },
           ],
