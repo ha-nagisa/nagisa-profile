@@ -66,7 +66,7 @@ const Works = ({ works }) => {
             "Hayami Nagisaの制作物を載せたページになります。お問い合わせは、コンタクトフォームもしくはメールアドレスまでお願いいたします。",
           images: [
             {
-              url: "public/ogp.png",
+              url: "https://nagisa-profile.com/ogp.png",
               alt: "nagisa-profile",
             },
           ],

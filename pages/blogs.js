@@ -66,7 +66,7 @@ const Blogs = ({ blogs }) => {
             "Hayami Nagisaのブログ記事を記載したページになります。間違えなどありましたらフォームからお問い合わせいただけると幸いです。",
           images: [
             {
-              url: "public/ogp.png",
+              url: "https://nagisa-profile.com/ogp.png",
               alt: "nagisa-profile",
             },
           ],

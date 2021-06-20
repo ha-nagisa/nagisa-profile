@@ -20,7 +20,7 @@ export default function Home() {
             "Hayami Nagisaの制作物やブログ記事を記載したサイトになります。お問い合わせは、コンタクトフォームもしくはメールアドレスまでお願いいたします。",
           images: [
             {
-              url: "public/ogp.png",
+              url: "https://nagisa-profile.com/ogp.png",
               alt: "nagisa-profile",
             },
           ],
