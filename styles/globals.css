@@ -20,6 +20,9 @@ a {
   box-sizing: border-box;
 }
 
+.image-border {
+  border: 2px solid #1f2937 !important;
+}
 .loader {
   border-top-color: #f59e0b;
   -webkit-animation: spinner 1.5s linear infinite;
