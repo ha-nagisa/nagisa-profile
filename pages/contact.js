@@ -1,4 +1,4 @@
-import ContactForm from "components/contactFOrm";
+import ContactForm from "components/contactForm";
 import LowerPageLayout from "layout/lowerPageLayout";
 
 const Contact = () => {
