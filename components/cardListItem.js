@@ -21,7 +21,7 @@ const CardListItem = ({ title, summary, date, image, slug }) => {
               />
             </div>
             <div className="flex flex-col w-full text-gray-500 lg:ml-4 p-5">
-              <p className="mt-4 mb-3 text-xs font-semibold tracking-widest text-black uppercase lg:mt-0 title-font">
+              <p className="mt-4 mb-3 text-lg font-medium tracking-widest text-black uppercase lg:mt-0 title-font">
                 {" "}
                 {title.length > 40 ? title.substr(0, 40) + "..." : title}
               </p>
