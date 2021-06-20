@@ -3,6 +3,7 @@ import { useState } from "react";
 import Footer from "components/footer";
 import Header from "components/header";
 import MobileMenu from "components/mobileMenu";
+import { Toaster } from "react-hot-toast";
 
 const MainLayout = ({ children }) => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -25,6 +26,18 @@ const MainLayout = ({ children }) => {
         <Footer />
       </div>
       <MobileMenu />
+      <Toaster
+        position="bottom-right"
+        reverseOrder={false}
+        gutter={8}
+        toastOptions={{
+          duration: 8000,
+          // Default options for specific types
+          success: {
+            duration: 8000,
+          },
+        }}
+      />
     </div>
   );
 };
