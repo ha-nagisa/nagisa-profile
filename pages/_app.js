@@ -7,9 +7,14 @@ library.add(faList, faBorderAll, faSortNumericDown, faSortNumericUp, faArrowUp);
 
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import "highlight.js/styles/hybrid.css";
+import { FormspreeProvider } from "@formspree/react";
 
 function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />;
+  return (
+    <FormspreeProvider project="1703813663527272168">
+      <Component {...pageProps} />
+    </FormspreeProvider>
+  );
 }
 
 export default MyApp;
