@@ -25,7 +25,7 @@ const MainLayout = ({ children }) => {
         {/* <!-- footer --> */}
         <Footer />
       </div>
-      <MobileMenu />
+      <MobileMenu menuOpen={menuOpen} />
       <Toaster
         position="bottom-right"
         reverseOrder={false}
