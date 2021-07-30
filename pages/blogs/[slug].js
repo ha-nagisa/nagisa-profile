@@ -53,7 +53,7 @@ const BlogDetail = ({ blog, preview }) => {
               <Image
                 width={820}
                 height={400}
-                className="inline-block w-full max-w-5xl max-h-96 rounded-md object-cover object-center"
+                className="inline-block w-full max-w-5xl max-h-96 rounded-md object-cover object-center image-border border-gray-800"
                 src={urlFor(blog.coverImage).height(600).url()}
                 alt="blog"
               />
