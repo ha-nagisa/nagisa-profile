@@ -54,8 +54,8 @@ const About = () => {
                 </p>
                 <p className="font-bold text-xl mb-1 border-b-2 border-green-800">・スキル</p>
                 <p className="break-all mb-3">
-                  HTML5 / CSS3 / Sass / JavaScript / JQery / Vue.js / React.js / Next.js / Redux / Firebase / Sanity /
-                  Wordpress / Shopify
+                  HTML5 / CSS3 / Sass / JavaScript / Typescript / JQery / Vue.js / React.js / Next.js / Redux / Firebase
+                  / Sanity / Wordpress / Shopify
                 </p>
                 <p className="font-bold text-xl mb-1 border-b-2 border-green-800">・性格</p>
                 <p className="break-all mb-3">地道にコツコツ努力することが得意です。</p>
