@@ -17,7 +17,7 @@ const serializers = {
               : "mb-2.5 text-center"
           }
         >
-          <Image width={865} height={500} src={urlFor(asset.url).height(500).fit("max").url()} alt={alt} />
+          <Image width={865} height={500} src={urlFor(asset.url).height(800).fit("max").url()} alt={alt} />
         </div>
       );
     },
