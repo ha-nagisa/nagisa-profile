@@ -50,12 +50,12 @@ const About = () => {
               <div className="py-12 px-6 lg:w-1/2">
                 <p className="font-bold text-xl mb-1 border-b-2 border-green-800">・経験</p>
                 <p className="mb-3">
-                  昨年の4月からプログラミングについて勉強を始めました。2020年4~9月は、主にwordpressによるサイト制作を個人で行いました。2020年10月~6月は、インターン先でshopifyによるサイト構築を行いました。gitによる共同開発も経験あります。
+                  昨年の4月からプログラミングについて勉強を始めました。2020年4~9月は、主にwordpressによるサイト制作を個人で行いました。2020年10月~2021年6月は、インターン先でshopifyによるサイト構築を行いました。gitによる共同開発も経験あります。
                 </p>
                 <p className="font-bold text-xl mb-1 border-b-2 border-green-800">・スキル</p>
                 <p className="break-all mb-3">
-                  HTML5 / CSS3 / Sass / JavaScript / JQery / React / Next.js / Redux / Firebase / Sanity / Wordpress /
-                  Shopify
+                  HTML5 / CSS3 / Sass / JavaScript / JQery / Vue.js / React.js / Next.js / Redux / Firebase / Sanity /
+                  Wordpress / Shopify
                 </p>
                 <p className="font-bold text-xl mb-1 border-b-2 border-green-800">・性格</p>
                 <p className="break-all mb-3">地道にコツコツ努力することが得意です。</p>

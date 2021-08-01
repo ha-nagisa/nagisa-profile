@@ -91,7 +91,7 @@ const BlogDetail = ({ blog, preview }) => {
                 </Link>
               </div>
             </div>
-            <div className="container mx-auto pb-24 md:px-20 xl:max-w-5xl">
+            <div className="container mx-auto pb-8 md:px-20 xl:max-w-5xl">
               {preview ? <PreviewAlert /> : null}
               {blog.content && <ArticleContent content={blog.content} />}
             </div>
