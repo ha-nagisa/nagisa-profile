@@ -17,20 +17,20 @@ const serializers = {
               : "mb-2.5 text-center"
           }
         >
-          <Image width={865} height={500} src={urlFor(asset.url).height(800).fit("max").url()} alt={alt} />
+          <Image width={865} height={500} src={urlFor(asset.url).height(1000).fit("max").url()} alt={alt} />
         </div>
       );
     },
     block(props) {
       switch (props.node.style) {
         case "h1":
-          return <h1 className="sm:text-3xl text-2xl font-bold my-1">{props.children}</h1>;
+          return <h1 className="sm:text-2xl text-xl font-bold my-1">{props.children}</h1>;
         case "h2":
-          return <h2 className="sm:text-2xl text-xl font-bold my-1">{props.children}</h2>;
+          return <h2 className="sm:text-xl text-lg font-bold my-1">{props.children}</h2>;
         case "h3":
-          return <h3 className="sm:text-xl text-lg font-bold my-1">{props.children}</h3>;
+          return <h3 className="sm:text-lg text-base font-bold my-1">{props.children}</h3>;
         case "h4":
-          return <h4 className="sm:text-lg text-base font-bold my-1">{props.children}</h4>;
+          return <h4 className="sm:text-base text-base font-bold my-1">{props.children}</h4>;
         case "li":
           return <li className="">{props.children}</li>;
         case "a":

@@ -60,9 +60,9 @@ const BlogDetail = ({ blog, preview }) => {
             </div>
             <div className="-ml-2 -mt-12 text-left sm:-mt-28 sm:mr-0 relative">
               <div className="block">
-                <p className="inline-block px-4 py-3 max-w-md text-gray-800 text-xl font-bold bg-white border-2 border-gray-800 rounded-md sm:px-6 sm:py-5 sm:text-2xl md:text-3xl lg:max-w-3xl lg:text-5xl">
+                <h1 className="inline-block px-4 py-3 max-w-md text-gray-800 text-xl font-bold bg-white border-2 border-gray-800 rounded-md sm:px-6 sm:py-5 sm:text-2xl md:text-3xl lg:max-w-3xl lg:text-5xl">
                   {blog.title}
-                </p>
+                </h1>
               </div>
               <div className="block">
                 <p className="text-md inline-block px-3 py-2 text-gray-800 font-medium bg-white border-2 border-t-0 border-gray-800 rounded-b-md sm:text-xl md:text-3xl">
