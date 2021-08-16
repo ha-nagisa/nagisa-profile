@@ -20,7 +20,7 @@ const CardItem = ({ title, summary, date, image, slug }) => {
           />
           <div className="p-6">
             <h1 className="title-font text-lg font-medium text-gray-900 mb-3">
-              {title.length > 40 ? title.substr(0, 40) + "..." : title}
+              {title.length > 70 ? title.substr(0, 70) + "..." : title}
             </h1>
             <p className="leading-relaxed mb-3">{summary.length > 120 ? summary.substr(0, 120) + "..." : summary}</p>
             <div className="text-right">

@@ -23,7 +23,7 @@ const CardListItem = ({ title, summary, date, image, slug }) => {
             <div className="flex flex-col w-full text-gray-500 lg:ml-4 p-5">
               <p className="mt-4 mb-3 text-lg font-medium tracking-widest text-black uppercase lg:mt-0 title-font">
                 {" "}
-                {title.length > 40 ? title.substr(0, 40) + "..." : title}
+                {title.length > 70 ? title.substr(0, 70) + "..." : title}
               </p>
               <p className="mb-3 text-base leading-relaxed text-gray-500">
                 {summary.length > 120 ? summary.substr(0, 120) + "..." : summary}{" "}
