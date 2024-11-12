@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-const MobileMenu = () => {
+const MobileMenu = ({ menuOpen }) => {
   return (
     <nav className={`mobile-menu fixed right-0 top-0 w-52 h-full bg-gray-800`}>
       <ul className="pt-20 px-10">
